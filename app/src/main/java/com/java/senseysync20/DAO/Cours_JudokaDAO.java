@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
+import android.util.Log;
 
 import androidx.annotation.RequiresApi;
 
@@ -104,7 +105,5 @@ public class Cours_JudokaDAO extends MainDAO<Cours_Judoka> {
         cursor.close();
         return coursJudoka;
     }
-
-
 
 }

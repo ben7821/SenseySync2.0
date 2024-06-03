@@ -93,20 +93,21 @@ public class StudentListAdapter extends ArrayAdapter<Judoka> {
         for (Map.Entry<Integer, String> entry : tempStatuses.entrySet()) {
             int idJudoka = entry.getKey();
             String presence = entry.getValue();
+            Log.d("VALIDATE", "" + idJudoka + " " + courseId + presence);
             Cours_Judoka coursJudoka = coursJudokaDAO.read(idJudoka, courseId);
             if (coursJudoka != null) {
                 coursJudokaDAO.update(new Cours_Judoka(idJudoka, courseId, presence));
-                Log.d("UPDATE", "Updated presence for judoka " + idJudoka + " in course " + courseId);
+                Log.d("UPDATE", "Updated presence for judoka " + idJudoka + " in course " + courseId + " to " + presence);
             } else {
                 try {
                     coursJudokaDAO.insert(new Cours_Judoka(idJudoka, courseId, presence));
-                    Log.d("INSERT", "Inserted presence for judoka " + idJudoka + " in course " + courseId);
+                    Log.d("INSERT", "Inserted presence for judoka " + idJudoka + " in course " + courseId + " to " + presence);
                 } catch (SQLiteConstraintException e) {
                     Log.e("VALIDATE", "Failed to insert presence for judoka " + idJudoka + " in course " + courseId, e);
                 }
             }
         }
-        coursJudokaDAO.close();
+        coursJudokaDAO.read();
         tempStatuses.clear();
         Log.d("VALIDATE", "Validation completed");
     }

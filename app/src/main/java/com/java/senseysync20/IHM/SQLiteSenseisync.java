@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class SQLiteSenseisync extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 24;
+    private static final int DATABASE_VERSION = 26;
     private static final String DATABASE_NAME = "BDDSenseySync2.0";
 
 

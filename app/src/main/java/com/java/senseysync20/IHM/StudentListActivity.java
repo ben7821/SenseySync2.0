@@ -48,9 +48,9 @@ public class StudentListActivity extends AppCompatActivity {
             JudokaDAO.open();
             coursJudokaDAO.open();
             ArrayList<Judoka> students = JudokaDAO.getStudents(courseId);
-            JudokaDAO.close();
             adapter = new StudentListAdapter(this, students, courseId, coursJudokaDAO);
             listViewStudents.setAdapter(adapter);
+            JudokaDAO.close();
         }
 
         Button validateButton = findViewById(R.id.validateButton);
