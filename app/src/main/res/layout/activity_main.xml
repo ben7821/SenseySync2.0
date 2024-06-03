@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IHM.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/lMainLayount"
+        android:layout_width="768dp"
+        android:layout_height="736dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.848"
+        app:layout_constraintStart_toEndOf="@+id/lAdminPanel"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tSenseisync"
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:text="Senseisync"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="279dp"
+            app:layout_constraintBottom_toTopOf="@+id/LeaveLayout"
+            app:layout_constraintEnd_toEndOf="@+id/lMainLayount"
+            app:layout_constraintStart_toStartOf="@+id/lMainLayount"
+            app:layout_constraintTop_toBottomOf="@+id/tSenseisync" />
+
+        <ListView
+            android:id="@+id/listViewCours"
+            android:layout_width="match_parent"
+            android:layout_height="385dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lAdminPanel"
+        android:layout_width="250dp"
+        android:layout_height="286dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tAdminPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Admin Panel" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/bCategorie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Catégorie" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/bJudoka"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Judoka" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LeaveLayout"
+        android:layout_width="123dp"
+        android:layout_height="48dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/lAdminPanel"
+        app:layout_constraintEnd_toStartOf="@+id/lMainLayount"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sCours"
+        app:layout_constraintVertical_bias="0.934">
+
+        <Button
+            android:id="@+id/bQuitter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Quitter" />
+    </LinearLayout>
+
+    <SearchView
+        android:id="@+id/sCours"
+        android:layout_width="382dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/lMainLayount"
+        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <LinearLayout
+        android:layout_width="94dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="32dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/lMainLayount"
+        app:layout_constraintHorizontal_bias="0.539"
+        app:layout_constraintStart_toEndOf="@+id/lAdminPanel">
+
+        <Button
+            android:id="@+id/bCours"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="New Cour" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
